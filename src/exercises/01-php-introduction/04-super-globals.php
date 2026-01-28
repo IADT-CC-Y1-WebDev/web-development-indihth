@@ -26,7 +26,13 @@
     <p class="output-label">Output:</p>
     <div class="output">
         <?php
-        // TODO: Write your solution here
+        echo "<table border='1' cellpadding='5' cellspacing='0'>";
+        echo "<thead><tr><th>Parameter</th><th>Value</th></tr></thead>";
+        echo "<tr><td>PHP_SELF</td><td>" . $_SERVER['PHP_SELF'] . "</td></tr>";
+        echo "<tr><td>REQUEST_METHOD</td><td>" . $_SERVER['REQUEST_METHOD'] . "</td></tr>";
+        echo "<tr><td>HTTP_HOST</td><td>" . $_SERVER['HTTP_HOST'] . "</td></tr>";
+        echo "<tr><td>HTTP_USER_AGENT</td><td>" . $_SERVER['HTTP_USER_AGENT'] . "</td></tr>";
+        echo "</table>";
         ?>
     </div>
 
@@ -43,6 +49,12 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        if (isset($_GET['name']) && !empty($_GET['name'])) {
+            $name = htmlspecialchars($_GET['name']);
+            echo "Hello, $name!";
+        } else {
+            echo "Hello, Guest!";
+        }
         ?>
     </div>
 
@@ -60,6 +72,27 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        if (isset($_GET['product']) && isset($_GET['quantity'])) {
+            $product = htmlspecialchars($_GET['product']);
+            $quantity = (int)$_GET['quantity'];
+            if (!empty($product) && $quantity > 0) {
+                echo "You ordered $quantity $product(s).";
+            } else {
+                if (empty($product)) {
+                    echo "Error: Product name is missing.<br/>";
+                }
+                if ($quantity <= 0) {
+                    echo " Error: Quantity must be a positive number.<br/>";
+                }
+            }
+        } else {
+            if (!isset($_GET['product'])) {
+                echo "Error: Product parameter is missing.<br/>";
+            }
+            if (!isset($_GET['quantity'])) {
+                echo " Error: Quantity parameter is missing.<br/>";
+            }
+        }
         ?>
     </div>
 

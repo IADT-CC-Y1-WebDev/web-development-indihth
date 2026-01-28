@@ -27,6 +27,16 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $age = rand(0, 100); // Random age for demonstration
+        if ($age >= 0 && $age <= 12) {
+            echo "Age: $age - Child";
+        } elseif ($age >= 13 && $age <= 19) {
+            echo "Age: $age - Teenager";
+        } elseif ($age >= 20 && $age <= 64) {
+            echo "Age: $age - Adult";
+        } else {
+            echo "Age: $age - Senior";
+        }
         ?>
     </div>
 
@@ -43,6 +53,32 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $dayNumber = rand(1, 7); // Random day for demonstration
+        switch ($dayNumber) {
+            case 1:
+                echo "Day: Monday - Weekday";
+                break;
+            case 2:
+                echo "Day: Tuesday - Weekday";
+                break;
+            case 3:
+                echo "Day: Wednesday - Weekday";
+                break;
+            case 4:
+                echo "Day: Thursday - Weekday";
+                break;
+            case 5:
+                echo "Day: Friday - Weekday";
+                break;
+            case 6:
+                echo "Day: Saturday - Weekend";
+                break;
+            case 7:
+                echo "Day: Sunday - Weekend";
+                break;
+            default:
+                echo "Invalid day number.";
+        }
         ?>
     </div>
 
@@ -58,6 +94,11 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $number = 7; // Change this number to generate a different multiplication table
+        for ($i = 1; $i <= 10; $i++) {
+            $result = $number * $i;
+            echo "$number × $i = $result<br/>";
+        }
         ?>
     </div>
 
@@ -73,6 +114,12 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $countdown = 10;
+        while ($countdown > 0) {
+            echo "$countdown<br/>";
+            $countdown--;
+        }
+        echo "Blast off!";
         ?>
     </div>
 

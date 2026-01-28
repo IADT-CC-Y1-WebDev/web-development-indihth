@@ -27,6 +27,17 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $favoriteMovies = [
+            "My Left Foot",
+            "The Commitments",
+            "Intermission",
+            "Brooklyn",
+            "An Cailín Ciúin"
+        ];
+        for ($i = 0; $i < count($favoriteMovies); $i++) {
+            $position = $i + 1;
+            echo "Movie $position: " . $favoriteMovies[$i] . "<br/>";
+        }
         ?>
     </div>
 
@@ -42,6 +53,14 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $student = [
+            "name" => "Emma O'Sullivan",
+            "studentId" => "S1234567",
+            "course" => "Computer Science",
+            "grade" => "A"
+        ];
+        $sentence = $student['name'] . " (ID: " . $student['studentId'] . ") is enrolled in " . $student['course'] . " and has received a grade of " . $student['grade'] . ".";
+        echo $sentence . "<br/>";
         ?>
     </div>
 
@@ -58,6 +77,16 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $countryCapitals = [
+            "Ireland" => "Dublin",
+            "France" => "Paris",
+            "Germany" => "Berlin",
+            "Italy" => "Rome",
+            "Spain" => "Madrid"
+        ];
+        foreach ($countryCapitals as $country => $capital) {
+            echo "The capital of $country is $capital.<br/>";
+        }
         ?>
     </div>
 
@@ -75,6 +104,30 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $menu = [
+            "Starters" => [
+                ["item" => "Bruschetta", "price" => 6.50],
+                ["item" => "Caesar Salad", "price" => 7.00],
+                ["item" => "Garlic Bread", "price" => 5.00]
+            ],
+            "Main Course" => [
+                ["item" => "Grilled Salmon", "price" => 15.00],
+                ["item" => "Vegetarian Tagine", "price" => 12.50],
+                ["item" => "Chicken Parmesan", "price" => 14.00]
+            ],
+            "Desserts" => [
+                ["item" => "Tiramisu", "price" => 6.00],
+                ["item" => "Cheesecake", "price" => 5.50],
+                ["item" => "Gelato", "price" => 4.50]
+            ]
+        ];
+        foreach ($menu as $category => $items) {
+            echo "<strong>$category:</strong><br/>";
+            foreach ($items as $menuItem) {
+                echo "- " . $menuItem['item'] . ": €" . number_format($menuItem['price'], 2) . "<br/>";
+            }
+            echo "<br/>";
+        }
         ?>
     </div>
 

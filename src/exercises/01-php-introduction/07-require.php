@@ -22,6 +22,7 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        require 'inc/navigation.php';
         ?>
     </div>
 
@@ -33,6 +34,16 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        require_once 'lib/utilities.php';
+        $text = "This is a long piece of text that needs to be truncated to 25 chars.";
+        echo "Text before truncation: $text<br/>";
+        echo "Truncated Text: " . truncate($text, 25) . "<br/><br/>";
+
+        $price = 1234.5;
+        echo "Price before formatting: $price<br/>";
+        echo "Formatted Price: " . formatPrice($price) . "<br/><br/>";
+
+        echo "Current Year: " . getCurrentYear() . "<br/>";
         ?>
     </div>
 
@@ -44,6 +55,30 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        require_once 'lib/validators.php';
+        require_once 'lib/formatters.php';
+
+        $emails = [
+            "clodagh@iol.ie",
+            "invalid-email@",
+        ];
+        foreach ($emails as $email) {
+            echo "Email to validate: $email<br/>";
+            if (isValidEmail($email)) {
+                echo "The email '$email' is valid.<br/><br/>";
+            } else {
+                echo "The email '$email' is not valid.<br/><br/>";
+            }
+        }
+
+        $phoneNumbers = [
+            "1234567890",
+            "987654321",
+        ];
+        foreach ($phoneNumbers as $number) {
+            echo "Phone number to format: $number<br/>";
+            echo "Formatted Phone Number: " . formatPhoneNumber($number) . "<br/><br/>";
+        }
         ?>
     </div>
 
